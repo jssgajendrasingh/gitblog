@@ -24,7 +24,17 @@
 
             <!-- CSS here -->
             <asset:stylesheet href="css/bootstrap.min.css"/>
-            <link rel="stylesheet" href="">
+            <asset:stylesheet href="css/owl.carousel.min.css"/>
+            <asset:stylesheet href="css/magnific-popup.css"/>
+            <asset:stylesheet href="css/font-awesome.min.css"/>
+            <asset:stylesheet href="css/themify-icons.css"/>
+            <asset:stylesheet href="css/nice-select.css"/>
+            <asset:stylesheet href="css/flaticon.css"/>
+            <asset:stylesheet href="css/animate.css"/>
+            <asset:stylesheet href="css/slicknav.css"/>
+            <asset:stylesheet href="css/style.css"/>
+            <asset:stylesheet href="css/responsive.css"/>
+            <!--   <link rel="stylesheet" href="">
             <link rel="stylesheet" href="css/owl.carousel.min.css">
             <link rel="stylesheet" href="css/magnific-popup.css">
             <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -34,7 +44,7 @@
             <link rel="stylesheet" href="css/animate.css">
             <link rel="stylesheet" href="css/slicknav.css">
             <link rel="stylesheet" href="css/style.css">
-            <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+            <link rel="stylesheet" href="css/responsive.css"> -->
         </head>
 
 <body>
