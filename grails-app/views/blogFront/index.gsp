@@ -7,10 +7,8 @@
 <html>
 <head>
     <title>blog Portal</title>
-
         <asset:stylesheet href="blog/home.css"/>
 
-</head>
 <body>
 <div class="header">
     <a class="logo">Nexthoughts Blog</a>
