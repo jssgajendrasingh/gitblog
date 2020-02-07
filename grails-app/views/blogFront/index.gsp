@@ -9,6 +9,7 @@
     <title>blog Portal</title>
         <asset:stylesheet href="blog/home.css"/>
         <asset:stylesheet href="blog/gajendra.css"/>
+        <asset:stylesheet href="blog/front.singup.css"/>
 </head>
 <body>
 <div class="header">
