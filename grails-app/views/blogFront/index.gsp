@@ -8,8 +8,12 @@
 <head>
     <title>blog Portal</title>
         <asset:stylesheet href="blog/home.css"/>
-        <asset:stylesheet href="blog/gajendra.css"/>
+
         <asset:stylesheet href="blog/front.singup.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="header">
@@ -19,7 +23,9 @@
         <a>
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
         </a>
-        <a></a>
+        <a>
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+        </a>
     </div>
 </div>
 
@@ -29,31 +35,43 @@
 <!-- login form--
 -->
 
-<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 
 <div id="id02" class="modal">
     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/action_page.php">
+    <form class="modal-content" >
         <div class="container">
             <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
             <hr>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-
+            <label for="firstNmae"><b>First Name</b></label>
+            <input type="text" placeholder="First Name" name="firstName" required>
+            <label for="middleName"><b>Middle Name</b></label>
+            <input type="text" placeholder="Middle Name" name="middleName" required>
+            <br>
+            <label for="lastName"><b>Last Name</b></label>
+            <input type="text" placeholder="Last Name" name="lastName" required>
+            <br>
+            <label for="emailId"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="emailId" required>
+            <br>
+            <label for="mobileNumber"><b>Mobile Number</b></label>
+            <input type="text" placeholder="Mobile Number" name="mobileNumber" required>
+            <br>
+            <label for="occupation"><b>Occupation</b></label>
+            <input type="text" placeholder="Occupation"name="occupation" required>
+            <br>
+            <label for="birthDate"><b>Date of Birth</b></label>
+            <input type="date" placeholder="Date of Birth"name="birthDate" required>
+            <br>
+            <label for="userName"><b>Username</b></label>
+            <input type="text" placeholder="Username"name="userName" required>
+            <br>
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <br>
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-            <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
-
-            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-            <div class="clearfix">
+            <br>
+             <div class="clearfix">
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
                 <button type="submit" class="signupbtn">Sign Up</button>
             </div>
@@ -63,29 +81,23 @@
 
 <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="/action_page.php" method="post">
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-         </div>
+    <div class="container">
+        <form class="form-inline" action="/action_page.php">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
 
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <br>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit">Login</button><br>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-    </form>
 </div>
 
 <!-- login form end--

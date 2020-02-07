@@ -1,10 +1,10 @@
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+input[type=text], input[type=password] ,input[type=date]{
+    width: 50%;
+    padding: 8px;
+    margin: 10px 0 22px 0;
     display: inline-block;
     border: none;
-    background: #f1f1f1;
+    background: lightblue;
 }
 
 /* Add a background color when the inputs get focus */
@@ -21,7 +21,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     opacity: 0.9;
 }
 
@@ -43,7 +43,7 @@ button:hover {
 
 /* Add padding to container elements */
 .container {
-    padding: 16px;
+    padding: 10px;
 }
 
 /* The Modal (background) */
@@ -57,21 +57,21 @@ button:hover {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: #474e5d;
-    padding-top: 50px;
+    padding-top: 1px;
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* Style the horizontal ruler */
 hr {
     border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 /* The Close Button (x) */
@@ -79,7 +79,7 @@ hr {
     position: absolute;
     right: 35px;
     top: 15px;
-    font-size: 40px;
+    font-size: 56px;
     font-weight: bold;
     color: #f1f1f1;
 }
