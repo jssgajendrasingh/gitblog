@@ -1,9 +1,9 @@
-package com.gajendra
+package blogproject
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class BlogEntryDetailsSpec extends Specification implements DomainUnitTest<BlogEntryDetails> {
+class LoginControllerSpec extends Specification implements ControllerUnitTest<LoginController> {
 
     def setup() {
     }

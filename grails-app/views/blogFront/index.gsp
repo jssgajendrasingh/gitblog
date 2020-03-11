@@ -6,187 +6,107 @@
 --%>
 <html>
 <head>
-    <title>Bootstrap Example</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-    * {box-sizing: border-box;}
-    input[type=text], input[type=password] {
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-
-    /* Set a style for all buttons */
-    button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 50%;
-    }
-
-    button:hover {
-        opacity: 0.8;
-    }
-
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-        width: auto;
-        padding: 15px 18px;
-        background-color: #f44336;
-    }
-
-    /* Center the image and position the close button */
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-        position: relative;
-    }
-
-    img.avatar {
-        width: 40%;
-        border-radius: 50%;
-    }
-
-    .container {
-        padding: 16px;
-    }
-
-    span.psw {
-        float: right;
-        padding-top: 16px;
-    }
-
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        padding-top: 60px;
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-        border: 1px solid #888;
-        width: 60%; /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button (x) */
-    .close {
-        position: absolute;
-        right: 25px;
-        top: 0;
-        color: #000;
-        font-size: 35px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: red;
-        cursor: pointer;
-    }
-
-    /* Add Zoom Animation */
-    .animate {
-        -webkit-animation: animatezoom 0.6s;
-        animation: animatezoom 0.6s
-    }
-
-    @-webkit-keyframes animatezoom {
-        from {-webkit-transform: scale(0)}
-        to {-webkit-transform: scale(1)}
-    }
-
-    @keyframes animatezoom {
-        from {transform: scale(0)}
-        to {transform: scale(1)}
-    }
-
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-        span.psw {
-            display: block;
-            float: none;
-        }
-        .cancelbtn {
-            width: 100%;
-        }
-    }
-    </style>
+    <asset:stylesheet href="blog/home.css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
     <ul class="navbar-nav">
-        <li class="nav-item active">
-            <h3><a class="nav-link" href="#">HOME</a></h3>
-        </li>
-        <li class="nav-item">
-            <h3><a class="nav-link" href="#"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button></a>
 
-            </h3>
+        <li class="nav-item">
+             <a class="nav-link" href="#">
+                <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
+            </a>
         </li>
         <li class="nav-item">
-            <h3><a class="nav-link" href="#">
+            <a class="nav-link" href="#">
                 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
-            </a></h3>
+            </a>
         </li>
     </ul>
 </nav>
 
-
+%{--LOGIN from html code--}%
 <div id="id02" class="modal">
-
-    <form class="modal-content animate" action="/action_page.php" method="post">
+<form class="modal-content animate" method="POST" action="${postUrl ?: '/login/authenticate'}">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-
         </div>
-
         <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
+            <label for="userName"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <br>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <br>
             <button type="submit">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
         </div>
-
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
     </form>
 </div>
+%{--END OF LOGIN HTML CODE--}%
 
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/action_page.php">
-        <div class="container">
-            <h3>Sign Up</h3>
+    <g:form class="modal-content" controller="BlogFront" action="insert" method="post">
 
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+        <h4>Sign Up</h4>
+        <div class="container">
+            <label for="firstName"><b>First Name</b></label>
+            <input type="text" id="firstName" placeholder="Enter First Name" name="firstName" required>
+
+            <label for="lastName"><b>Last Name</b></label>
+            <input type="text" id="lastName" placeholder="Enter Last Name" name="lastName" required>
+            <br>
+            <label for="emailId"><b>Email Id </b></label>
+            <input type="text" id="emailId" placeholder="Enter Email Id" name="emailId" required>
+
+            <label for="mobileNumber"><b>Mobile Number</b></label>
+            <input type="text" id="mobileNumber" placeholder="Enter mobile Number" name="mobileNumber" required>
+            <br>
+            <label for="occupation"><b>occupation </b></label>
+            <input type="text" id="occupation" placeholder="Enter occupation " name="occupation" required>
+
+            <label for="userName"><b>Username</b></label>
+            <input type="text" id="userName" placeholder="Enter Username" name="userName" required>
+            <br>
+            <label for="password"><b>Password</b></label>
+            <input type="password" id="password" placeholder="Enter Password" name="password" required>
+            <br><br>
+           <h4>filling Address</h4>
+            <br>
+            <label for="houseNumber"><b>House Number</b></label>
+            <input type="text" id="houseNumber" placeholder="House Number" name="houseNumber" required>
+
+            <label for="roadName"><b>Road Name</b></label>
+            <input type="text" id="roadName" placeholder="Road Name" name="roadName" required>
+            <br>
+            <label for="areaName"><b>Area Name</b></label>
+            <input type="text" id="areaName" placeholder="Area Name" name="areaName" required>
+            <br><br>
+            <h4>filling Address 2</h4>
+            <br>
+            <label for="houseNumber1"><b>House Number</b></label>
+            <input type="text" id="houseNumber1" placeholder="House Number" name="houseNumber" required>
+
+            <label for="roadName1"><b>Road Name</b></label>
+            <input type="text" id="roadName1" placeholder="Road Name" name="roadName" required>
+            <br>
+            <label for="areaName1"><b>Area Name</b></label>
+            <input type="text" id="areaName1" placeholder="Area Name" name="areaName" required>
 
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -199,38 +119,10 @@
                 <button type="submit" class="signupbtn">Sign Up</button>
             </div>
         </div>
-    </form>
+    </g:form>
 </div>
-
-<script>
-    // Get the modal
-    var modal = document.getElementById('id01');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    // Get the modal
-    var modal = document.getElementById('id02');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-
-
 <div class="container">
-    <h2>Form Grid</h2>
-    <p>Create two form elements that appear side by side with .row and .col:</p>
-    <form action="/action_page.php">
-
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
+ Blog= ${blogname}
 </div>
 
 </body>

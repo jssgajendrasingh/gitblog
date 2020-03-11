@@ -1,11 +1,12 @@
 // Added by the Spring Security Core plugin:
-grails.plugin.databasemigration.reports.updateOnStart = true
-grails.plugin.databasemigration.reports.changelogFileName = changelog-reports.groovy
-grails.plugin.databasemigration.updateAllOnStart = true
-grails.plugin.databasemigration.changelogFileName = changelog.groovy
+//grails.plugin.databasemigration.updateAllOnStart = true
+//grails.plugin.databasemigration.changelogFileName = changelog.groovy
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.gajendra.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.gajendra.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.gajendra.Role'
+grails.plugin.springsecurity.userLookup.usernamePropertyName='userName'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/blogFront/login'
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl ='/blogFront/demo'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
@@ -16,7 +17,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/js/**',       access: ['permitAll']],
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
-	[pattern: '/**/favicon.ico', access: ['permitAll']]
+	[pattern: '/**/favicon.ico', access: ['permitAll']],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
