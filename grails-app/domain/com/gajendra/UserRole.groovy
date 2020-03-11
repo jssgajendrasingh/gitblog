@@ -1,10 +1,9 @@
 package com.gajendra
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.DetachedCriteria
 import groovy.transform.ToString
-
 import org.codehaus.groovy.util.HashCodeHelper
-import grails.compiler.GrailsCompileStatic
 
 @GrailsCompileStatic
 @ToString(cache = true, includeNames = true, includePackage = false)
@@ -51,7 +50,7 @@ class UserRole implements Serializable {
 
     static UserRole create(User user, Role role, boolean flush = false) {
         def instance = new UserRole(user: user, role: role)
-        instance.save(flush: flush)
+        instance.save(flush: true)
         return instance
     }
 

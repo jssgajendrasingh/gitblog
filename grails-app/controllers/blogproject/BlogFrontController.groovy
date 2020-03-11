@@ -1,16 +1,13 @@
 package blogproject
 
-import com.gajendra.Address
-import com.gajendra.Blog
-import com.gajendra.Role
-import com.gajendra.User
-import com.gajendra.UserRole
+import com.gajendra.*
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured('permitAll')
 class BlogFrontController {
     def springSecurityService
     SaveInformationService saveInformationService
+    UpdateInformationService updateInformationService
     def index()
     {
         def allBlog=Blog.createCriteria().list {
@@ -68,37 +65,20 @@ class BlogFrontController {
     def edit(){
 
     }
-    def abc(){
-        User user=new User(params)
+    def abc() {
         User currentUser = springSecurityService.currentUser as User
-      //  def userId=currentUser.id
-        println(user.mobileNumber)
-        println(user.emailId)
-        println(user.occupation)
-        currentUser.mobileNumber = params.mobileNumber
+        println(currentUser.id)
+        /*currentUser.mobileNumber = params.mobileNumber
         currentUser.emailId = params.emailId
         currentUser.occupation = params.occupation
-        //println(userId)
-//        User userDetail=User.get(currentUser.id)
-//        println("BLOG " +userDetail)
-//        println(userDetail.id)
-//        userDetail.mobileNumber=user.mobileNumber
-//        userDetail.emailId=user.emailId
-//        userDetail.occupation=user.occupation
         if (currentUser.validate()) {
-            try {
-                currentUser.save(failOnError: true)
-            }
-            catch (Exception)
-                println("if block")
+
+                currentUser.save(flush: true,failOnError: true)
         } else {
-            log.error("GAJENDRASingh Error while saving Group Object $currentUser")
-        }
-
-
-
-
-
+            log.error("UPDATE Error while saving Group Object $currentUser")
+        }*/
+        updateInformationService.insertUpdatedValue(params.emailId, params.mobileNumber, params.occupation, currentUser)
+        updateInformationService.insertUpdatedAddressValue(params.houseNumber as List, params.roadName as List, params.areaName as List)
 
 
     }

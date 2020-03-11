@@ -8,15 +8,11 @@ class BlogInsertController {
     def springSecurityService
     def index() { }
     def blog(){
-        Blog blog=new Blog(params)
-       // println("BLOG"+params)
-        //println(blog)
-         def us = springSecurityService.currentUser as User
-         //println(user)
-         blog.user=us
+        Blog blog = new Blog(params)
+        def currentUser = springSecurityService.currentUser as User
+        blog.user = currentUser
         if (blog.validate()) {
-            blog.save(failOnError: true)
-           // redirect(action:'home')
+            blog.save(flush: true, failOnError: true)
         } else {
             blog.errors.each {
                 println(it)

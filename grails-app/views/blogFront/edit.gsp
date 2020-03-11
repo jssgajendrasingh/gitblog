@@ -22,6 +22,8 @@
     <input type="text" id="occupation" name="occupation">
     <br><br>
     <h4>EDIT Addresses</h4>
+
+    <h2>current Address</h2>
     <label for="houseNumber">Mobile Number</label>
     <input type="text" id="houseNumber" name="houseNumber"><br><br>
     <label for="roadName">Email Id:</label>
@@ -29,8 +31,16 @@
     <label for="areaName">Occupation :</label>
     <input type="text" id="areaName" name="areaName">
     <br><br>
-    <button type="submit" >Submit</button>
 
+    <h2>Permanent Address</h2>
+    <label for="houseNumber">Mobile Number</label>
+    <input type="text" id="houseNumber" name="houseNumber"><br><br>
+    <label for="roadName">Email Id:</label>
+    <input type="text" id="roadName" name="roadName"><br><br>
+    <label for="areaName">Occupation :</label>
+    <input type="text" id="areaName" name="areaName">
+    <br><br>
+    <button type="submit">Submit</button>
 </g:form>
 </body>
 </html>

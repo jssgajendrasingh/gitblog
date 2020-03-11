@@ -25,21 +25,21 @@ class SaveInformationService {
         return user
     }
 
-    Address insertAddValue(List houseNumber=[], List roadName=[], List areaName=[], User user)
-    {   address=new Address()
-        for(int i=0;i<houseNumber.size();i++){
-            address=new Address()
-            address.houseNumber=houseNumber[i]
-            address.roadName=roadName[i]
-            address.areaName=areaName[i]
-            user.addToAddresses(address)
-
+    Address insertAddValue(List houseNumber = [], List roadName = [], List areaName = []) {
+        address = new Address()
+        for (int i = 0; i < houseNumber.size(); i++) {
+            address = new Address()
+            address.houseNumber = houseNumber[i]
+            address.roadName = roadName[i]
+            address.areaName = areaName[i]
             if (address.validate()) {
                 address.save(failOnError: true)
 
             } else {
                 log.error("address  Error while saving Group Object $address")
             }
+            user.addToAddresses(address)
+
         }
     }
 }

@@ -1,8 +1,8 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: gajendra
-  Date: 03/03/20
-  Time: 7:05 PM
+Created by IntelliJ IDEA.
+User: gajendra
+Date: 11/03/20
+Time: 3:20 PM
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -12,7 +12,6 @@
 </head>
 
 <body>
-Successfully insert
 
 </body>
 </html>

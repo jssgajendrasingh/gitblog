@@ -71,23 +71,25 @@
             <label for="lastName"><b>Last Name</b></label>
             <input type="text" id="lastName" placeholder="Enter Last Name" name="lastName" required>
             <br>
-            <label for="emailId"><b>Email Id </b></label>
+            <label for="emailId"><b>Email Id</b></label>
             <input type="text" id="emailId" placeholder="Enter Email Id" name="emailId" required>
 
             <label for="mobileNumber"><b>Mobile Number</b></label>
             <input type="text" id="mobileNumber" placeholder="Enter mobile Number" name="mobileNumber" required>
             <br>
-            <label for="occupation"><b>occupation </b></label>
-            <input type="text" id="occupation" placeholder="Enter occupation " name="occupation" required>
+            <label for="occupation"><b>occupation</b></label>
+            <select id="occupation" name="occupation">
+                <option value="student">Student</option>
+                <option value="employee">Employee</option>
+            </select>
 
             <label for="userName"><b>Username</b></label>
             <input type="text" id="userName" placeholder="Enter Username" name="userName" required>
             <br>
             <label for="password"><b>Password</b></label>
             <input type="password" id="password" placeholder="Enter Password" name="password" required>
-            <br><br>
-           <h4>filling Address</h4>
-            <br>
+
+            <h4>Current Address</h4>
             <label for="houseNumber"><b>House Number</b></label>
             <input type="text" id="houseNumber" placeholder="House Number" name="houseNumber" required>
 
@@ -96,9 +98,8 @@
             <br>
             <label for="areaName"><b>Area Name</b></label>
             <input type="text" id="areaName" placeholder="Area Name" name="areaName" required>
-            <br><br>
-            <h4>filling Address 2</h4>
-            <br>
+
+            <h4>Permanent Address</h4>
             <label for="houseNumber1"><b>House Number</b></label>
             <input type="text" id="houseNumber1" placeholder="House Number" name="houseNumber" required>
 
@@ -115,14 +116,18 @@
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
             <div class="clearfix">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('id01').style.display = 'none'"
+                        class="cancelbtn">Cancel</button>
                 <button type="submit" class="signupbtn">Sign Up</button>
             </div>
         </div>
     </g:form>
 </div>
-<div class="container">
- Blog= ${blogname}
+
+<div class="col-sm-3 sidenav">
+    <div class="container">
+        Blog= ${blogname}
+    </div>
 </div>
 
 </body>
