@@ -126,7 +126,7 @@
 
 <div class="col-sm-3 sidenav">
     <div class="container">
-        Blog= ${blogname}
+         ${blogname}
     </div>
 </div>
 
