@@ -13,7 +13,9 @@ class UpdateInformationService {
     def springSecurityService
 
     //User user1
-    def insertUpdatedValue(String emailId, String mobileNumber, String occupation, user) {
+    def insertUpdatedValue(String firstName, String lastName,String emailId, String mobileNumber, String occupation, user) {
+        user.firstName=firstName
+        user.lastName=lastName
         user.emailId = emailId
         user.mobileNumber = mobileNumber
         user.occupation = occupation

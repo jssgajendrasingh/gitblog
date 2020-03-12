@@ -9,38 +9,70 @@
 <html>
 <head>
     <title></title>
+    <style>
+
+    </style>
+
 </head>
 
 <body>
-<g:form controller="blogFront" action="abc" method="POST">
-    <h4>EDIT PROFILES</h4>
-    <label for="mobileNumber">Mobile Number</label>
-    <input type="text" id="mobileNumber" name="mobileNumber"><br><br>
-    <label for="emailId">Email Id:</label>
-    <input type="text" id="emailId" name="emailId"><br><br>
-    <label for="occupation">Occupation :</label>
-    <input type="text" id="occupation" name="occupation">
-    <br><br>
-    <h4>EDIT Addresses</h4>
+<g:form method="POST" controller="blogFront" action="abc">
 
-    <h2>current Address</h2>
-    <label for="houseNumber">Mobile Number</label>
-    <input type="text" id="houseNumber" name="houseNumber"><br><br>
-    <label for="roadName">Email Id:</label>
-    <input type="text" id="roadName" name="roadName"><br><br>
-    <label for="areaName">Occupation :</label>
-    <input type="text" id="areaName" name="areaName">
-    <br><br>
+    <g:each in="${userRecords}" var="user">
+        <table border="2" align="center">
+            <tr>
+                <th><b>First Name</b></th>
+                <th><b>Last Name</b></th>
+                <th><b>Email ID</b></th>
+                <th><b>Mobile Number</b></th>
+                <th><b>Occupation</b></th>
+                <th><b>House Number</b></th>
+                <th><b>Road Name</b></th>
+                <th><b>Area Name</b></th>
+                <th><b>Submit</b></th>
+            </tr>
+            <tr>
+                <td><input type="text" name="firstName"  size="10" value="${user.firstName}"/></td>
+                <td><input type="text" name="lastName" size="10" value="${user.lastName}"/></td>
+                <td><input type="text" name="emailId" value="${user.emailId}"/></td>
+                <td><input type="text" name="mobileNumber" size="10" value="${user.mobileNumber}"/></td>
+                <td><input type="text" name="occupation" size="10" value="${user.occupation}"/></td>
+                <td >
+                    <g:each in="${userAddresses}" var="p"  status="i">
+                    <table border="2">
+                        <tr>
+                            <td><input type="text" name="houseNumber" size="10" value="${p.houseNumber}"/></td>
+                        </tr>
+                    </table>
+                    </g:each>
+                </td>
+                <td>
+                    <g:each in="${userAddresses}" var="p"  status="i">
+                        <table border="2">
+                            <tr>
+                                <td><input type="text" name="roadName" size="10" value="${p.roadName}"/></td>
+                            </tr>
+                        </table>
+                    </g:each>
+                </td>
+                <td>
+                    <g:each in="${userAddresses}" var="p"  status="i">
+                        <table border="2">
+                            <tr>
+                                <td><input type="text" name="areaName"  size="10" value="${p.areaName}"/></td>
+                            </tr>
+                        </table>
+                    </g:each>
+                </td>
+                <td>
+                    <input type="submit" value="submit "/>
+                </td>
 
-    <h2>Permanent Address</h2>
-    <label for="houseNumber">Mobile Number</label>
-    <input type="text" id="houseNumber" name="houseNumber"><br><br>
-    <label for="roadName">Email Id:</label>
-    <input type="text" id="roadName" name="roadName"><br><br>
-    <label for="areaName">Occupation :</label>
-    <input type="text" id="areaName" name="areaName">
-    <br><br>
-    <button type="submit">Submit</button>
+            </tr>
+
+        </table>
+    </g:each>
 </g:form>
+
 </body>
 </html>

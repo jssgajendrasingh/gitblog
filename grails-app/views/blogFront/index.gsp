@@ -12,6 +12,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <asset:stylesheet href="blog/home.css"/>
+    <script>
+        function FillBilling(f) {
+            if(f.billingtoo.checked === true) {
+                f.houseNumber2.value = f.houseNumber1.value;
+                f.roadName2.value = f.roadName1.value;
+                f.areaName2.value = f.areaName1.value;
+
+            }
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
@@ -88,18 +98,9 @@
             <br>
             <label for="password"><b>Password</b></label>
             <input type="password" id="password" placeholder="Enter Password" name="password" required>
+            <fieldset>
 
-            <h4>Current Address</h4>
-            <label for="houseNumber"><b>House Number</b></label>
-            <input type="text" id="houseNumber" placeholder="House Number" name="houseNumber" required>
-
-            <label for="roadName"><b>Road Name</b></label>
-            <input type="text" id="roadName" placeholder="Road Name" name="roadName" required>
-            <br>
-            <label for="areaName"><b>Area Name</b></label>
-            <input type="text" id="areaName" placeholder="Area Name" name="areaName" required>
-
-            <h4>Permanent Address</h4>
+                <h4><legend>Current Address</legend> </h4>
             <label for="houseNumber1"><b>House Number</b></label>
             <input type="text" id="houseNumber1" placeholder="House Number" name="houseNumber" required>
 
@@ -108,7 +109,21 @@
             <br>
             <label for="areaName1"><b>Area Name</b></label>
             <input type="text" id="areaName1" placeholder="Area Name" name="areaName" required>
+            <br>
 
+            <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+            <em>Check this box if Current Address and Permanent Address are the same.</em>
+
+            <h4>Permanent Address</h4>
+            <label for="houseNumber2"><b>House Number</b></label>
+            <input type="text" id="houseNumber2" placeholder="House Number" name="houseNumber" required>
+
+            <label for="roadName2"><b>Road Name</b></label>
+            <input type="text" id="roadName2" placeholder="Road Name" name="roadName" required>
+            <br>
+            <label for="areaName2"><b>Area Name</b></label>
+            <input type="text" id="areaName2" placeholder="Area Name" name="areaName" required>
+            </fieldset>
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
             </label>
@@ -126,7 +141,9 @@
 
 <div class="col-sm-3 sidenav">
     <div class="container">
-         ${blogname}
+
+${blogname}
+
     </div>
 </div>
 

@@ -23,12 +23,12 @@ th,td {
     <a href="#default" class="logo">${name}</a>
     <div class="header-right">
         <a><g:link controller='blogFront' action="home">HOME</g:link></a>
-        <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
         <a><g:link controller="blogFront" action="viewData">Your Details</g:link></a>
+        <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
     </div>
 </div>
-<br>
 <center>
+    <br>
 <g:form method="POST" controller="BlogInsert" action="blog">
     <textarea rows="10" cols="25" name="userBlog"></textarea>
     <button type="submit" >Submit</button>
@@ -53,7 +53,7 @@ th,td {
                 <td >${user.mobileNumber}</td>
                 <td >${user.occupation}</td>
                 <td ><g:each in="${userAddresses}" var="p"  status="i">
-                        <table border="2">
+                        <table>
                              <tr>
                                 <td>${p.houseNumber}</td>
                              </tr>
@@ -62,7 +62,7 @@ th,td {
                 </td>
                 <td>
                     <g:each in="${userAddresses}" var="p"  status="i">
-                        <table border="2">
+                        <table>
                             <tr>
                                 <td>${p.roadName}</td>
                             </tr>
@@ -71,7 +71,7 @@ th,td {
                 </td>
                 <td>
                     <g:each in="${userAddresses}" var="p"  status="i">
-                        <table border="2">
+                        <table  >
                             <tr>
                                 <td >${p.areaName}</td>
                             </tr>
