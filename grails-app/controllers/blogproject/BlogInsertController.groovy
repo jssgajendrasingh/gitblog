@@ -19,5 +19,27 @@ class BlogInsertController {
             }
             log.error("Error while saving Group Object $blog")
         }
+        render(view: 'blog')
+    }
+    def blogUpdate(){
+        println(params.userBlog)
+        List list =params.keySet() as List
+        println(list)
+        def  blogid=list.get(1)
+        println(blogid)
+        Blog  blogdetails = Blog.findById(blogid)
+        println(blogdetails)
+        println(blogdetails.userBlog)
+        blogdetails.userBlog=params.userBlog
+        if (blogdetails.validate()) {
+            blogdetails.save(flush: true, failOnError: true)
+        } else {
+            blogdetails.errors.each {
+                println(it)
+            }
+            log.error("Error while update Group Object $blogdetails")
+        }
+        render(view: 'blogUpdate')
+
     }
 }

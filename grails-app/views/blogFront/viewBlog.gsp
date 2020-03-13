@@ -9,24 +9,41 @@
 <html>
 <head>
     <title></title>
+    <asset:stylesheet href="blog/home-view.css"/>
+
 </head>
 
-<body>
+<body><div class="header">
+    <a href="#default" class="logo">${name}</a>
+
+    <div class="header-right">
+        <a><g:link controller='blogFront' action="home">HOME</g:link></a>
+        <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
+    </div>
+</div>
 <center>
+    <br><br><br>
     <table border="2">
         <tr>
             <th><b>ID</b></th>
             <th><b>Blog</b></th>
             <th><b>Edit/Update</b></th>
+            <th><b>Deleted</b></th>
+
         </tr>
         <g:each in="${blogdetails}" var="blog" status="i">
             <tr>
-                <td>${blog.id}</td>
+                <td>${i+1}</td>
                 <td>${blog.userBlog}</td>
                 <td>
-                    <input type="submit" value="submit "/>
-
-                    <g:link controller="blogFront" action="editBlog">EDIT</g:link>
+                    <g:form controller="blogFront" action="editBlog">
+                        <input type="submit" value="edit" name="${blog.id}" />
+                </g:form>
+                </td>
+                <td>
+                    <g:form controller="blogFront" action="deletedBlog">
+                        <input type="submit" value="deleted" name="${blog.id}" />
+                    </g:form>
                 </td>
 
             </tr>

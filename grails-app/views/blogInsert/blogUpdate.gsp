@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: gajendra
-  Date: 03/03/20
-  Time: 7:05 PM
+  Date: 13/03/20
+  Time: 4:28 PM
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -21,9 +21,12 @@
         <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
     </div>
 </div>
+<br><br><br>
 <center>
-<p>
-   Blog Successfully insert
-</p></center>
+    <p>
+        Blog information are successfully update please <br>
+
+    </p>
+</center>
 </body>
 </html>

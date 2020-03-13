@@ -9,27 +9,40 @@
 <html>
 <head>
     <title></title>
+    <asset:stylesheet href="blog/home-view.css"/>
+
 </head>
 
-<body>
+<body><div class="header">
+    <a href="#default" class="logo">${name}</a>
+
+    <div class="header-right">
+        <a><g:link controller='blogFront' action="home">HOME</g:link></a>
+        <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
+    </div>
+</div>
+<g:form controller="blogInsert" action="blogUpdate">
 <center>
+    <br><br><br>
+    <g:each in="${blogdetails}" var="blog" status="i">
     <table border="2">
         <tr>
             <th><b>ID</b></th>
             <th><b>Blog</b></th>
             <th><b>Edit/Update</b></th>
         </tr>
-        <g:each in="${blogdetails}" var="blog" status="i">
+
             <tr>
-                <td>${blog.id}</td>
-                <td><input type="text" name="firstName" size="10" value="${blog.userBlog}"/></td>
+                <td>${i+1}</td>
+                <td><input type="text"  name="userBlog" value="${blog.userBlog}"/></td>
                 <td>
-                    <input type="submit" value="submit "/>
+                    <input type="submit" value="submit" name="${blog.id}"/>
                 </td>
 
             </tr>
-        </g:each>
-
-</table></center>
+   </table>
+    </g:each>
+</center>
+</g:form>
 </body>
 </html>

@@ -32,8 +32,9 @@ th,td {
 </div>
 <center>
     <br>
+    <h3><p>WRITE YOUR BLOG</p></h3>
     <g:form method="POST" controller="BlogInsert" action="blog">
-        <textarea rows="10" cols="25" name="userBlog"></textarea>
+        <textarea rows="10" cols="85" name="userBlog"></textarea>
         <button type="submit">Submit</button>
     </g:form>
 

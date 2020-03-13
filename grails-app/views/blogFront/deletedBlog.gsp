@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: gajendra
-  Date: 03/03/20
-  Time: 7:05 PM
+  Date: 13/03/20
+  Time: 5:30 PM
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -22,8 +22,11 @@
     </div>
 </div>
 <center>
-<p>
-   Blog Successfully insert
-</p></center>
+    <p>    <br><br><br>
+
+        Blog information are successfully deleted please <br>
+
+    </p>
+</center>
 </body>
 </html>

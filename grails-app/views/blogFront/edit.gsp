@@ -9,15 +9,20 @@
 <html>
 <head>
     <title></title>
-    <style>
-
-    </style>
+    <asset:stylesheet href="blog/home-view.css"/>
 
 </head>
 
-<body>
-<g:form method="POST" controller="blogFront" action="abc">
+<body><div class="header">
+    <a href="#default" class="logo">${name}</a>
 
+    <div class="header-right">
+        <a><g:link controller='blogFront' action="home">HOME</g:link></a>
+        <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
+    </div>
+</div>
+<g:form method="POST" controller="blogFront" action="abc">
+    <br><br><br>
     <g:each in="${userRecords}" var="user">
         <table border="2" align="center">
             <tr>

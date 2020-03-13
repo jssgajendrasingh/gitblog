@@ -9,10 +9,20 @@
 <html>
 <head>
     <title></title>
+    <asset:stylesheet href="blog/home-view.css"/>
+
 </head>
 
-<body>
+<body><div class="header">
+    <a href="#default" class="logo">${name}</a>
+
+    <div class="header-right">
+        <a><g:link controller='blogFront' action="home">HOME</g:link></a>
+        <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
+    </div>
+</div>
 <center>
+    <br><br><br>
     <g:each in="${userRecords}" var="user">
         <table border="2">
             <tr>

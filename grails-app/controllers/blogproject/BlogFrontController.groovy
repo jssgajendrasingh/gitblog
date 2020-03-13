@@ -51,7 +51,7 @@ class BlogFrontController {
     def success(){
         //render "account successfully create Please login "
     }
-
+    def denied(){}
     def demo() {}
 
     def viewData() {
@@ -94,11 +94,20 @@ class BlogFrontController {
     }
 
     def editBlog() {
-        def user = springSecurityService.currentUser as User
-        List<Blog> blogList = Blog.findAllByUser(user)
-        render(view: "editBlog", model: [blogdetails: blogList])
+        List list =params.keySet() as List
+        def  blogid=list.get(0)
+        def  blogdetails = Blog.findById(blogid)
+       render(view: "editBlog", model: [blogdetails: blogdetails])
     }
+    def deletedBlog(){
+        println(params)
+        List list =params.keySet() as List
+        def  blogid=list.get(0)
+        def  blogdetails = Blog.get(blogid)
+         blogdetails.delete(flush: true, failOnError: true)
+        render(view: 'deletedBlog')
 
+    }
     def view() {
         String s1 = "userString"
         String s2 = "address"
