@@ -15,14 +15,13 @@
 
 <body>
 <div class="header">
-    <a href="#default" class="logo">${name}</a>
     <div class="header-right">
         <a><g:link controller='blogFront' action="home">HOME</g:link></a>
         <a><g:link controller='blogFront' action='index'>Logout</g:link></a>
     </div>
 </div>
 <br><br>
-<center>
+-<center>
     <table border="2">
         <tr>
             <th><b>Serial Number</b></th>

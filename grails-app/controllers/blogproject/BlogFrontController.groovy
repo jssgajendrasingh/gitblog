@@ -8,7 +8,6 @@ class BlogFrontController {
     def springSecurityService
     SaveInformationService saveInformationService
     UpdateInformationService updateInformationService
-    def ROLE_ADMIN
     def index()
     {
         def allBlog=Blog.createCriteria().list {
@@ -58,7 +57,17 @@ class BlogFrontController {
         def uname=user.userName
         List<User> userData=User.findAllByUserName(uname)
         def userAddressId=user.addresses
-        render(view: "home",  model:[userAddresses: userAddressId,userRecords: userData,name:uname])
+        render(view: "viewData",  model:[userAddresses: userAddressId,userRecords: userData,name:uname])
+    }
+    def viewBlog(){
+        def user = springSecurityService.currentUser as User
+        List<Blog> blogList=Blog.findAllByUser(user)
+        if (!blogList.isEmpty()){
+        render(view: "viewBlog",model: [blogdetails:blogList])
+        }
+        else{
+            render(view: 'demo')
+        }
     }
     def edit(){
         def user = springSecurityService.currentUser as User
@@ -78,9 +87,35 @@ class BlogFrontController {
     def admin(){
 
     }
-    def view(){
-    def usersDetails=User.list()
-       render(view: "view",model: [userRecords: usersDetails])
+    def editBlog(){
+        def user = springSecurityService.currentUser as User
+        List<Blog> blogList=Blog.findAllByUser(user)
+             render(view: "editBlog",model: [blogdetails:blogList])
+    }
+    def view() {
+        String s1="userString"
+        String s2="address"
+        String s3="blog"
+       def table=params.value
+        switch (table){
+            case s1:
+                def usersDetails = User.list()
+                render(view: "user", model: [userRecords: usersDetails])
+                break
+            case s2:
+                def addressDetails = Address.list()
+                render(view: "address", model: [userRecords: addressDetails])
+                break
+            case s3:
+                def blogDetails = Blog.list()
+                render(view: "blog", model: [userRecords: blogDetails])
+                break
+            default:
+                render(view: 'admin')
+
+
+        }
+
 
     }
 }
