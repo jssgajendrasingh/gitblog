@@ -51,53 +51,60 @@ class BlogFrontController {
     def success(){
         //render "account successfully create Please login "
     }
-    def demo(){}
-    def viewData(){
+
+    def demo() {}
+
+    def viewData() {
         def user = springSecurityService.currentUser as User
-        def uname=user.userName
-        List<User> userData=User.findAllByUserName(uname)
-        def userAddressId=user.addresses
-        render(view: "viewData",  model:[userAddresses: userAddressId,userRecords: userData,name:uname])
+        def uname = user.userName
+        List<User> userData = User.findAllByUserName(uname)
+        def userAddressId = user.addresses
+        render(view: "viewData", model: [userAddresses: userAddressId, userRecords: userData, name: uname])
     }
-    def viewBlog(){
+
+    def viewBlog() {
         def user = springSecurityService.currentUser as User
-        List<Blog> blogList=Blog.findAllByUser(user)
-        if (!blogList.isEmpty()){
-        render(view: "viewBlog",model: [blogdetails:blogList])
-        }
-        else{
+        List<Blog> blogList = Blog.findAllByUser(user)
+        if (!blogList.isEmpty()) {
+            render(view: "viewBlog", model: [blogdetails: blogList])
+        } else {
             render(view: 'demo')
         }
     }
-    def edit(){
+
+    def edit() {
         def user = springSecurityService.currentUser as User
-        def uname=user.userName
-        List<User> userData=User.findAllByUserName(uname)
-        def userAddressId=user.addresses
-        render(view: "edit",  model:[userAddresses: userAddressId,userRecords: userData,name:uname])
+        def uname = user.userName
+        List<User> userData = User.findAllByUserName(uname)
+        def userAddressId = user.addresses
+        render(view: "edit", model: [userAddresses: userAddressId, userRecords: userData, name: uname])
     }
+
     def abc() {
         User currentUser = springSecurityService.currentUser as User
         println(currentUser.id)
-       updateInformationService.insertUpdatedValue(params.firstName,params.lastName,params.emailId,params.mobileNumber,params.occupation, currentUser)
-       updateInformationService.insertUpdatedAddressValue(params.houseNumber as List, params.roadName as List, params.areaName as List)
+        updateInformationService.insertUpdatedValue(params.firstName, params.lastName, params.emailId, params.mobileNumber, params.occupation, currentUser)
+        updateInformationService.insertUpdatedAddressValue(params.houseNumber as List, params.roadName as List, params.areaName as List)
 
-      redirect(action: 'login')
+        redirect(action: 'login')
     }
-    def admin(){
+
+    def admin() {
 
     }
-    def editBlog(){
+
+    def editBlog() {
         def user = springSecurityService.currentUser as User
-        List<Blog> blogList=Blog.findAllByUser(user)
-             render(view: "editBlog",model: [blogdetails:blogList])
+        List<Blog> blogList = Blog.findAllByUser(user)
+        render(view: "editBlog", model: [blogdetails: blogList])
     }
+
     def view() {
-        String s1="userString"
-        String s2="address"
-        String s3="blog"
-       def table=params.value
-        switch (table){
+        String s1 = "userString"
+        String s2 = "address"
+        String s3 = "blog"
+        def table = params.value
+        switch (table) {
             case s1:
                 def usersDetails = User.list()
                 render(view: "user", model: [userRecords: usersDetails])

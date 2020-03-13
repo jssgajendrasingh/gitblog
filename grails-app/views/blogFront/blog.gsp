@@ -27,11 +27,11 @@
             <th><b>Serial Number</b></th>
             <th><b>blog</b></th>
         </tr>
-        <g:each in="${userRecords}" var="blog"  status="i">
+        <g:each in="${userRecords}" var="blog" status="i">
             <tr>
-                <td>${i+1}</td>
+                <td>${i + 1}</td>
                 <td>${blog.userBlog}</td>
-             </tr>
+            </tr>
         </g:each>
     </table>
 </center>

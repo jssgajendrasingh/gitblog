@@ -29,12 +29,12 @@
             <th><b>road  Name</b></th>
             <th><b>area Name</b></th>
         </tr>
-        <g:each in="${userRecords}" var="address"  status="i">
+        <g:each in="${userRecords}" var="address" status="i">
             <tr>
-                <td>${i+1}</td>
+                <td>${i + 1}</td>
                 <td>${address.houseNumber}</td>
                 <td>${address.roadName}</td>
-                <td >${address.areaName}</td>
+                <td>${address.areaName}</td>
             </tr>
         </g:each>
     </table>

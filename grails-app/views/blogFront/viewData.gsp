@@ -10,63 +10,63 @@
 <head>
     <title></title>
 </head>
+
 <body>
 <center>
-<g:each in="${userRecords}" var="user">
-    <table border="2">
-        <tr>
-            <th><b>First Name</b></th>
-            <th><b>Last Name</b></th>
-            <th><b>Email ID</b></th>
-            <th><b>Mobile Number</b></th>
-            <th><b>Occupation</b></th>
-            <th><b>House Number</b></th>
-            <th><b>Road Name</b></th>
-            <th><b>Area Name</b></th>
-            <th><b>Edit/Update</b></th>
-        </tr>
-        <tr>
-            <td>${user.firstName}</td>
-            <td>${user.lastName}</td>
-            <td >${user.emailId}</td>
-            <td >${user.mobileNumber}</td>
-            <td >${user.occupation}</td>
-            <td ><g:each in="${userAddresses}" var="p"  status="i">
-                <table>
-                    <tr>
-                        <td>${p.houseNumber}</td>
-                    </tr>
-                </table>
-            </g:each>
-            </td>
-            <td>
-                <g:each in="${userAddresses}" var="p"  status="i">
+    <g:each in="${userRecords}" var="user">
+        <table border="2">
+            <tr>
+                <th><b>First Name</b></th>
+                <th><b>Last Name</b></th>
+                <th><b>Email ID</b></th>
+                <th><b>Mobile Number</b></th>
+                <th><b>Occupation</b></th>
+                <th><b>House Number</b></th>
+                <th><b>Road Name</b></th>
+                <th><b>Area Name</b></th>
+                <th><b>Edit/Update</b></th>
+            </tr>
+            <tr>
+                <td>${user.firstName}</td>
+                <td>${user.lastName}</td>
+                <td>${user.emailId}</td>
+                <td>${user.mobileNumber}</td>
+                <td>${user.occupation}</td>
+                <td><g:each in="${userAddresses}" var="p" status="i">
                     <table>
                         <tr>
-                            <td>${p.roadName}</td>
+                            <td>${p.houseNumber}</td>
                         </tr>
                     </table>
                 </g:each>
-            </td>
-            <td>
-                <g:each in="${userAddresses}" var="p"  status="i">
-                    <table  >
-                        <tr>
-                            <td >${p.areaName}</td>
-                        </tr>
-                    </table>
-                </g:each>
-            </td>
-            <td>
-                <g:link controller="blogFront" action="edit">EDIT</g:link>
-            </td>
+                </td>
+                <td>
+                    <g:each in="${userAddresses}" var="p" status="i">
+                        <table>
+                            <tr>
+                                <td>${p.roadName}</td>
+                            </tr>
+                        </table>
+                    </g:each>
+                </td>
+                <td>
+                    <g:each in="${userAddresses}" var="p" status="i">
+                        <table>
+                            <tr>
+                                <td>${p.areaName}</td>
+                            </tr>
+                        </table>
+                    </g:each>
+                </td>
+                <td>
+                    <g:link controller="blogFront" action="edit">EDIT</g:link>
+                </td>
 
-        </tr>
+            </tr>
 
-    </table>
-</g:each>
+        </table>
+    </g:each>
 </center>
-
 
 </body>
 </html>
