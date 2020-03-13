@@ -22,8 +22,8 @@
     </div>
 </div>
 <center>
-<p>
-   Blog Successfully insert
-</p></center>
+    <p>
+        Blog Successfully insert
+    </p></center>
 </body>
 </html>

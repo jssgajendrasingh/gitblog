@@ -22,27 +22,27 @@
     </div>
 </div>
 <g:form controller="blogInsert" action="blogUpdate">
-<center>
-    <br><br><br>
-    <g:each in="${blogdetails}" var="blog" status="i">
-    <table border="2">
-        <tr>
-            <th><b>ID</b></th>
-            <th><b>Blog</b></th>
-            <th><b>Edit/Update</b></th>
-        </tr>
+    <center>
+        <br><br><br>
+        <g:each in="${blogdetails}" var="blog" status="i">
+            <table border="2">
+                <tr>
+                    <th><b>ID</b></th>
+                    <th><b>Blog</b></th>
+                    <th><b>Edit/Update</b></th>
+                </tr>
 
-            <tr>
-                <td>${i+1}</td>
-                <td><input type="text"  name="userBlog" value="${blog.userBlog}"/></td>
-                <td>
-                    <input type="submit" value="submit" name="${blog.id}"/>
-                </td>
+                <tr>
+                    <td>${i + 1}</td>
+                    <td><input type="text" name="userBlog" value="${blog.userBlog}"/></td>
+                    <td>
+                        <input type="submit" value="submit" name="${blog.id}"/>
+                    </td>
 
-            </tr>
-   </table>
-    </g:each>
-</center>
+                </tr>
+            </table>
+        </g:each>
+    </center>
 </g:form>
 </body>
 </html>

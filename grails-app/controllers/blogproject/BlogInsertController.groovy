@@ -21,16 +21,17 @@ class BlogInsertController {
         }
         render(view: 'blog')
     }
-    def blogUpdate(){
+
+    def blogUpdate() {
         println(params.userBlog)
-        List list =params.keySet() as List
+        List list = params.keySet() as List
         println(list)
-        def  blogid=list.get(1)
+        def blogid = list.get(1)
         println(blogid)
-        Blog  blogdetails = Blog.findById(blogid)
+        Blog blogdetails = Blog.findById(blogid)
         println(blogdetails)
         println(blogdetails.userBlog)
-        blogdetails.userBlog=params.userBlog
+        blogdetails.userBlog = params.userBlog
         if (blogdetails.validate()) {
             blogdetails.save(flush: true, failOnError: true)
         } else {

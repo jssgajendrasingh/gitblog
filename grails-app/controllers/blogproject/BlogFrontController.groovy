@@ -51,7 +51,7 @@ class BlogFrontController {
     def success(){
         //render "account successfully create Please login "
     }
-    def denied(){}
+    def denied() {}
     def demo() {}
 
     def viewData() {
@@ -94,20 +94,22 @@ class BlogFrontController {
     }
 
     def editBlog() {
-        List list =params.keySet() as List
-        def  blogid=list.get(0)
-        def  blogdetails = Blog.findById(blogid)
-       render(view: "editBlog", model: [blogdetails: blogdetails])
+        List list = params.keySet() as List
+        def blogid = list.get(0)
+        def blogdetails = Blog.findById(blogid)
+        render(view: "editBlog", model: [blogdetails: blogdetails])
     }
-    def deletedBlog(){
+
+    def deletedBlog() {
         println(params)
-        List list =params.keySet() as List
-        def  blogid=list.get(0)
-        def  blogdetails = Blog.get(blogid)
-         blogdetails.delete(flush: true, failOnError: true)
+        List list = params.keySet() as List
+        def blogid = list.get(0)
+        def blogdetails = Blog.get(blogid)
+        blogdetails.delete(flush: true, failOnError: true)
         render(view: 'deletedBlog')
 
     }
+
     def view() {
         String s1 = "userString"
         String s2 = "address"

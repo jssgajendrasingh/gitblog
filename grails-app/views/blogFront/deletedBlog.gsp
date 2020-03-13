@@ -22,7 +22,7 @@
     </div>
 </div>
 <center>
-    <p>    <br><br><br>
+    <p><br><br><br>
 
         Blog information are successfully deleted please <br>
 

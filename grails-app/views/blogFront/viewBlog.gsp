@@ -33,16 +33,16 @@
         </tr>
         <g:each in="${blogdetails}" var="blog" status="i">
             <tr>
-                <td>${i+1}</td>
+                <td>${i + 1}</td>
                 <td>${blog.userBlog}</td>
                 <td>
                     <g:form controller="blogFront" action="editBlog">
-                        <input type="submit" value="edit" name="${blog.id}" />
-                </g:form>
+                        <input type="submit" value="edit" name="${blog.id}"/>
+                    </g:form>
                 </td>
                 <td>
                     <g:form controller="blogFront" action="deletedBlog">
-                        <input type="submit" value="deleted" name="${blog.id}" />
+                        <input type="submit" value="deleted" name="${blog.id}"/>
                     </g:form>
                 </td>
 

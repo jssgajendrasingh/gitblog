@@ -6,7 +6,7 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.gajendra.U
 grails.plugin.springsecurity.authority.className = 'com.gajendra.Role'
 grails.plugin.springsecurity.userLookup.usernamePropertyName='userName'
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/blogFront/login'
-grails.plugin.springsecurity.failureHandler.defaultFailureUrl ='/blogFront/denied'
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/blogFront/denied'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
