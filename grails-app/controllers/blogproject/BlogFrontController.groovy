@@ -16,6 +16,7 @@ class BlogFrontController {
              }
         }
        [blogname:allBlog]
+        //render(view: 'index',model: [[blogname:allBlog]])
     }
     def insert(){
         User user=saveInformationService.insertValue(params.firstName,params.lastName,params.emailId,params.mobileNumber,params.occupation,params.userName,params.password)
@@ -58,7 +59,7 @@ class BlogFrontController {
         def user = springSecurityService.currentUser as User
         def uname = user.userName
         List<User> userData = User.findAllByUserName(uname)
-        def userAddressId = user.addresses
+        def userAddressId = user.addresses.sort()
         render(view: "viewData", model: [userAddresses: userAddressId, userRecords: userData, name: uname])
     }
 

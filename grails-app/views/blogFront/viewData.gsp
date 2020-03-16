@@ -31,6 +31,7 @@
                 <th><b>Email ID</b></th>
                 <th><b>Mobile Number</b></th>
                 <th><b>Occupation</b></th>
+                <th><b>Addresses</b></th>
                 <th><b>House Number</b></th>
                 <th><b>Road Name</b></th>
                 <th><b>Area Name</b></th>
@@ -42,6 +43,16 @@
                 <td>${user.emailId}</td>
                 <td>${user.mobileNumber}</td>
                 <td>${user.occupation}</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Address-1</td>
+                        </tr>
+                        <tr>
+                            <td>Address-2</td>
+                        </tr>
+                    </table>
+                </td>
                 <td><g:each in="${userAddresses}" var="p" status="i">
                     <table>
                         <tr>

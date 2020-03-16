@@ -21,7 +21,8 @@
     </div>
 </div>
 <br><br>
--<center>
+-<center>    <h2>BLOG TABLE</h2>
+
     <table border="2">
         <tr>
             <th><b>Serial Number</b></th>

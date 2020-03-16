@@ -22,6 +22,8 @@
 </div>
 <br><br>
 -<center>
+    <h2>ADDRESS TABLE</h2>
+
     <table border="2">
         <tr>
             <th><b>Number</b></th>

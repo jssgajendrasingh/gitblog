@@ -22,6 +22,7 @@
 </div>
 <br><br>
 -<center>
+    <h2>USER TABLE</h2>
     <table border="2">
         <tr>
             <th><b>Serial Number</b></th>

@@ -32,16 +32,28 @@
                 <th><b>Mobile Number</b></th>
                 <th><b>Occupation</b></th>
                 <th><b>House Number</b></th>
+                <th><b>House Number</b></th>
                 <th><b>Road Name</b></th>
                 <th><b>Area Name</b></th>
                 <th><b>Submit</b></th>
             </tr>
+
             <tr>
                 <td><input type="text" name="firstName"  size="10" value="${user.firstName}"/></td>
                 <td><input type="text" name="lastName" size="10" value="${user.lastName}"/></td>
                 <td><input type="text" name="emailId" value="${user.emailId}"/></td>
                 <td><input type="text" name="mobileNumber" size="10" value="${user.mobileNumber}"/></td>
                 <td><input type="text" name="occupation" size="10" value="${user.occupation}"/></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Address-1</td>
+                        </tr>
+                        <tr>
+                            <td>Address-2</td>
+                        </tr>
+                    </table>
+                </td>
                 <td >
                     <g:each in="${userAddresses}" var="p"  status="i">
                     <table border="2">
