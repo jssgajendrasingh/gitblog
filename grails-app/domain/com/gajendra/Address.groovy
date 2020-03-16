@@ -1,7 +1,7 @@
 package com.gajendra
 
 class Address {
-    //User user
+    static hasMany = [user:User]
     String houseNumber
     String roadName
     String areaName

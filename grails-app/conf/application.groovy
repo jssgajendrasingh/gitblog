@@ -1,6 +1,6 @@
 // Added by the Spring Security Core plugin:
-//grails.plugin.databasemigration.updateAllOnStart = true
-//grails.plugin.databasemigration.changelogFileName = changelog.groovy
+grails.plugin.databasemigration.updateAllOnStart = true
+grails.plugin.databasemigration.changelogFileName = changelog.groovy
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.gajendra.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.gajendra.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.gajendra.Role'
