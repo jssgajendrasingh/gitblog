@@ -10,13 +10,14 @@ class BlogFrontController {
     UpdateInformationService updateInformationService
     def index()
     {
-        def allBlog=Blog.createCriteria().list {
-            projections {
-                property('userBlog')
-             }
-        }
-       [blogname:allBlog]
-        //render(view: 'index',model: [[blogname:allBlog]])
+        /* def allBlog=Blog.createCriteria().list {
+             projections {
+                 property('userBlog')
+              }
+         }
+        [blogname:allBlog]*/
+        def allBlog = Blog.list()
+        render(view: 'index', model: [blogname: allBlog])
     }
     def insert(){
         User user=saveInformationService.insertValue(params.firstName,params.lastName,params.emailId,params.mobileNumber,params.occupation,params.userName,params.password)

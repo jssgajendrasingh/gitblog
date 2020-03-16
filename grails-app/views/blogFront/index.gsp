@@ -139,15 +139,12 @@
     </g:form>
 </div>
 
-<div class="col-sm-3 sidenav">
+<div class="col-sm-12 sidenav">
     <div class="container">
-       %{-- <g:each in="${userRecords}" var="blog" status="i">
-            <tr>
-                <td>${i + 1}</td>
-                <td>${blog.userBlog}</td>
-            </tr>
-        </g:each>--}%
-${blogname}
+
+        <g:each in="${blogname}" var="blog" status="i">
+            <h4>${blog.userBlog}<br></h4>
+        </g:each>
 
     </div>
 </div>
